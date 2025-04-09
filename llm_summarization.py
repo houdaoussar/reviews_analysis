@@ -31,7 +31,8 @@ def summarize_reviews(reviews, prompt_template):
         return "Error: OpenAI API key not set"
     
     # Join reviews with line breaks for better context
-    reviews_text = "\n\n".join(reviews)
+    reviews_text = "\n\n".join(map(str, reviews))
+
     
     # Format the prompt
     prompt = prompt_template.format(reviews=reviews_text)
