@@ -10,7 +10,7 @@ st.set_page_config(
 
 # Now import other modules after the page config
 import home, google_sheets, file_upload, results, llm_summarization
-import report_generation, chart_export
+import report_generation, chart_export, ask_ai
 from style import apply_custom_style, custom_warning, custom_success, custom_error
 
 # Apply custom styling after page config
@@ -32,6 +32,7 @@ choice = st.sidebar.selectbox(
         "📁 Analysis Via File Upload", 
         "📊 Results Dashboard", 
         "🤖 AI Summarization",
+        "💬 Ask AI",
         "📷 Export Charts",
         "📑 Generate Reports"
     ]
@@ -55,6 +56,8 @@ elif choice == "📊 Results Dashboard":
     results.show_results()
 elif choice == "🤖 AI Summarization":
     llm_summarization.show_summarization()
+elif choice == "💬 Ask AI":
+    ask_ai.show_ask_ai()
 elif choice == "📷 Export Charts":
     chart_export.show_chart_export()
 elif choice == "📑 Generate Reports":
