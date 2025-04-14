@@ -99,7 +99,8 @@ def get_review_insights(df, query, max_samples=100):
     """
     
     # Generate the prompt
-    prompt = f"""You are an AI assistant that helps analyze Amazon product reviews. 
+    prompt = f"""You are an AI assistant that helps analyze Amazon product reviews. If any question is outside of this scope then clearly mention that role is just to analyze and inform about the reviews.
+
     
     USER QUERY: "{query}"
     
@@ -116,7 +117,7 @@ def get_review_insights(df, query, max_samples=100):
     4. Quantitative observations when possible
     
     Keep your response concise, professional, and focused on the data provided.
-    """
+    """
     
     try:
         # Call the OpenAI API
